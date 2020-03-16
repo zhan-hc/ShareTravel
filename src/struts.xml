@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="travel" extends="struts-default">
+		<action name="users_*" class="userAction" method="{1}">
+			<result name="add" type="redirect">/login.jsp?type=login</result>
+			<result name="input">/login.jsp</result>
+			<result name="success">/index.jsp</result>
+			<result name="empty">/empty.jsp</result>
+			<allowed-methods>addUser,loginUser</allowed-methods>
+		</action>
+		<!-- <action name="place_*" class="placeAction" method="{1}">
+			<result name="list">/place.jsp</result>
+			<allowed-methods>list</allowed-methods>
+		</action>
+		<action name="city_*" class="cityAction" method="{1}">
+			<result name="list">/City.jsp</result>
+			<allowed-methods>listID</allowed-methods>
+		</action> -->
+		<action name="introduce_*" class="introduceAction" method="{1}">
+			<result name="route">/place.jsp</result>
+			<result name="all">/place.jsp</result>
+			<result name="empty">/empty.jsp</result>
+			<result name="detail">/spot.jsp</result>			
+			<allowed-methods>Route,Detail</allowed-methods>
+		</action>
+	</package>
+</struts>

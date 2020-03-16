@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate//Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.sise.travel.po">
+ <class name="Place" table="place">
+ <id name="sid" type="integer">
+ <generator class="native"/>
+ </id>
+ <property name="spotname" type="string" length="50" not-null="true"/>
+  <property name="images" type="string" length="255" not-null="true"/>
+   <property name="introduce" type="string" length="255" not-null="true"/>
+   <property name="times" type="string" length="255" not-null="true"/>
+   <set name="introduces" table="route"  lazy="false">
+            <!-- column:外键，别人引用我的外键列名 -->
+            <key column="sid" ></key>
+            <!-- class:我与哪个表是多对多关系，column:外键，我引用别人的外键 -->
+            <many-to-many class="Introduce" column="tid"/>
+        </set>
+ </class>
+ </hibernate-mapping>

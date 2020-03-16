@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project adv-config="true">
+  <container path="com.genuitec.runtime.library/com.genuitec.hibernate_5.1">
+    <disable type="core"/>
+  </container>
+</project>

@@ -1,0 +1,41 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="user.username">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>用户名不能为空!</message>
+		</field-validator>
+		<field-validator type="stringlength" short-circuit="true">
+            <param name="minLength">6</param>
+            <param name="maxLength">14</param>
+            <message>用户名长度为6-14位</message>
+        </field-validator>
+	</field>
+	<field name="user.email">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>邮箱不能为空!</message>
+		</field-validator>
+		<field-validator type="email" short-circuit="true">
+             <message>邮箱格式不正确</message>
+         </field-validator>
+	</field>
+	<field name="user.password">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>密码不能为空!</message>
+		</field-validator>
+		<field-validator type="stringlength" short-circuit="true">
+            <param name="minLength">6</param>
+            <param name="maxLength">16</param>
+            <message>密码长度为6-16位</message>
+        </field-validator>
+	</field>
+<!-- 	 <field name="user.repassword">
+        <field-validator type="fieldexpression" short-circuit="true">
+            <param name="expression"><![CDATA[(user.password == user.repassword)]]></param>
+            <message>密码和确认密码不一致</message>
+        </field-validator>
+     </field> -->
+</validators>
